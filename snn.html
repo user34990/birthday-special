@@ -1,0 +1,1032 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Special Person ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Georgia, serif;
+    background:#09000a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ---------- COMMON PAGE ---------- */
+
+.page{
+    min-height:100vh;
+    width:100%;
+    display:none;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.page.active{
+    display:flex;
+    animation:pageIn 1s ease;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:scale(1.04);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* ---------- BEAUTIFUL BACKGROUND ---------- */
+
+.page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,#ff2f7d40,transparent 30%),
+        radial-gradient(circle at 80% 80%,#9c165f40,transparent 30%),
+        linear-gradient(135deg,#17000e,#39001e,#080006);
+    z-index:-2;
+}
+
+.stars{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:white;
+    box-shadow:0 0 10px white;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.4);
+    }
+}
+
+/* ---------- BUTTON ---------- */
+
+.nextBtn{
+    margin-top:35px;
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff297d,#ff0059);
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 8px 35px #ff176955;
+    transition:.3s;
+}
+
+.nextBtn:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 45px #ff176999;
+}
+
+/* ---------- PAGE 1 : BOUQUETS ---------- */
+
+#page1{
+    flex-direction:column;
+    padding:30px 20px;
+}
+
+.mainTitle{
+    font-size:clamp(35px,7vw,65px);
+    color:#ff9bc2;
+    text-shadow:0 0 25px #ff126d;
+    margin-bottom:12px;
+}
+
+.subtitle{
+    color:#ffd3e3;
+    font-size:18px;
+    margin-bottom:40px;
+}
+
+.bouquets{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+    max-width:1000px;
+}
+
+.bouquet{
+    width:170px;
+    height:210px;
+    position:relative;
+    cursor:pointer;
+    transition:.4s;
+    animation:float 3s infinite ease-in-out;
+}
+
+.bouquet:nth-child(2){
+    animation-delay:.5s;
+}
+
+.bouquet:nth-child(3){
+    animation-delay:1s;
+}
+
+.bouquet:nth-child(4){
+    animation-delay:1.5s;
+}
+
+.bouquet:hover{
+    transform:scale(1.12) translateY(-10px);
+}
+
+.flowers{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    font-size:65px;
+    line-height:65px;
+    filter:drop-shadow(0 0 15px #ff4c93);
+}
+
+.wrap{
+    position:absolute;
+    bottom:15px;
+    left:30px;
+    width:110px;
+    height:100px;
+    background:linear-gradient(135deg,#ffafd0,#d92c6a);
+    clip-path:polygon(50% 0,100% 100%,0 100%);
+    box-shadow:0 0 20px #ff3e86;
+}
+
+.ribbon{
+    position:absolute;
+    bottom:55px;
+    left:72px;
+    width:25px;
+    height:40px;
+    background:#ffd3e5;
+    transform:rotate(45deg);
+}
+
+.bouquetLabel{
+    position:absolute;
+    bottom:-5px;
+    width:100%;
+    color:#ffd9e8;
+    font-size:14px;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+/* ---------- PAGE 2 : SHAYARI ---------- */
+
+#page2{
+    overflow-y:auto;
+    padding:50px 20px;
+    align-items:flex-start;
+}
+
+.shayariContainer{
+    width:min(800px,95%);
+    margin:auto;
+    padding:50px 30px;
+    border-radius:30px;
+    background:#ffffff0d;
+    border:1px solid #ff83b355;
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 60px #ff176622;
+}
+
+.shayariContainer h2{
+    color:#ff9fc7;
+    font-size:clamp(32px,6vw,50px);
+    margin-bottom:35px;
+}
+
+.shayari{
+    color:#ffe4ef;
+    font-size:clamp(19px,3vw,27px);
+    line-height:2;
+    font-style:italic;
+}
+
+.scrollHint{
+    margin-top:50px;
+    color:#ffb9d3;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(10px);
+    }
+}
+
+.yesBox{
+    margin-top:100px;
+    padding:40px 20px;
+    border-top:1px solid #ff7eaf55;
+}
+
+.yesBox h3{
+    font-size:30px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.yesButton{
+    padding:18px 60px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff3282,#ff0055);
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 35px #ff146d88;
+    transition:.3s;
+}
+
+.yesButton:hover{
+    transform:scale(1.1);
+}
+
+/* ---------- PAGE 3 : CAKE ---------- */
+
+#page3{
+    flex-direction:column;
+}
+
+.cakeTitle{
+    font-size:clamp(28px,5vw,45px);
+    color:#ff9fc8;
+    margin-bottom:50px;
+}
+
+.cake{
+    width:300px;
+    height:270px;
+    position:relative;
+    cursor:pointer;
+    animation:cakeFloat 3s infinite ease-in-out;
+    transition:.3s;
+}
+
+.cake:hover{
+    transform:scale(1.06);
+}
+
+@keyframes cakeFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.cakeBase{
+    position:absolute;
+    width:260px;
+    height:105px;
+    bottom:25px;
+    left:20px;
+    background:linear-gradient(#ff83b3,#d92868);
+    border-radius:20px;
+    box-shadow:0 15px 40px #ff1f6955;
+}
+
+.cakeCream{
+    position:absolute;
+    width:220px;
+    height:65px;
+    bottom:110px;
+    left:40px;
+    background:#ffdce9;
+    border-radius:20px;
+}
+
+.cakeTop{
+    position:absolute;
+    width:200px;
+    height:65px;
+    bottom:150px;
+    left:50px;
+    background:#fff3f8;
+    border-radius:50%;
+}
+
+.drip{
+    position:absolute;
+    width:25px;
+    height:40px;
+    background:#ff75a9;
+    border-radius:0 0 15px 15px;
+    top:25px;
+}
+
+.drip:nth-child(1){
+    left:25px;
+}
+
+.drip:nth-child(2){
+    left:75px;
+    height:30px;
+}
+
+.drip:nth-child(3){
+    right:65px;
+}
+
+.drip:nth-child(4){
+    right:25px;
+    height:30px;
+}
+
+.candle{
+    position:absolute;
+    width:20px;
+    height:55px;
+    left:140px;
+    bottom:205px;
+    background:repeating-linear-gradient(
+        45deg,
+        white 0px,
+        white 7px,
+        #ff3c82 7px,
+        #ff3c82 14px
+    );
+    border-radius:5px;
+}
+
+.flame{
+    position:absolute;
+    width:22px;
+    height:32px;
+    background:#ffd21c;
+    border-radius:50% 50% 50% 0;
+    transform:rotate(-45deg);
+    top:-27px;
+    box-shadow:0 0 30px #ffb300;
+    animation:flame 1s infinite alternate;
+}
+
+@keyframes flame{
+    from{
+        transform:rotate(-45deg) scale(.9);
+    }
+    to{
+        transform:rotate(-45deg) scale(1.1);
+    }
+}
+
+.tapCake{
+    color:#ffd1e2;
+    margin-top:30px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        opacity:.4;
+    }
+}
+
+/* ---------- PAGE 4 : I LOVE YOU ---------- */
+
+#page4{
+    flex-direction:column;
+}
+
+.bigLove{
+    font-family:Arial,sans-serif;
+    font-size:clamp(55px,13vw,160px);
+    font-weight:900;
+    color:#ff1c72;
+    text-shadow:
+        0 0 15px white,
+        0 0 35px #ff176d,
+        0 0 80px #ff176d;
+    animation:heartbeat 1.2s infinite;
+}
+
+.bigHeart{
+    font-size:90px;
+    margin-top:20px;
+    animation:heartbeat 1s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+/* ---------- PAGE 5 : LOVE LETTER ---------- */
+
+#page5{
+    min-height:100vh;
+    padding:40px 15px;
+    overflow-y:auto;
+    align-items:flex-start;
+}
+
+.letter{
+    width:min(900px,96%);
+    margin:auto;
+    padding:50px;
+    border-radius:30px;
+    background:linear-gradient(145deg,#fff9fc,#ffe1ed);
+    color:#5a1834;
+    box-shadow:0 0 70px #ff217455;
+    text-align:left;
+}
+
+.letterTitle{
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:900;
+    font-size:clamp(38px,7vw,75px);
+    color:#d91662;
+    line-height:1.1;
+    margin-bottom:40px;
+}
+
+.letterSubtitle{
+    text-align:center;
+    color:#e52b70;
+    font-size:25px;
+    margin-bottom:35px;
+}
+
+.letter p{
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:22px;
+}
+
+.letter .highlight{
+    color:#d91662;
+    font-weight:bold;
+}
+
+.signature{
+    margin-top:40px;
+    text-align:right;
+    font-size:24px;
+    color:#d91662;
+    font-style:italic;
+}
+
+.finalLove{
+    margin-top:45px;
+    text-align:center;
+    font-family:Arial,sans-serif;
+    font-weight:900;
+    font-size:clamp(45px,10vw,100px);
+    color:#ff126b;
+    text-shadow:0 0 25px #ff126b99;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.floatingHeart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    z-index:999;
+    animation:rise 5s linear forwards;
+}
+
+@keyframes rise{
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px){
+
+    .bouquet{
+        width:135px;
+        height:180px;
+    }
+
+    .flowers{
+        font-size:52px;
+    }
+
+    .wrap{
+        width:90px;
+        left:23px;
+    }
+
+    .ribbon{
+        left:58px;
+    }
+
+    .shayariContainer{
+        padding:35px 20px;
+    }
+
+    .letter{
+        padding:30px 20px;
+    }
+
+    .letter p{
+        font-size:16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     PAGE 1 : MANY BEAUTIFUL BOUQUETS
+===================================================== -->
+
+<section class="page active" id="page1">
+
+    <div class="stars"></div>
+
+    <h1 class="mainTitle">
+        For Someone Very Special ❤️
+    </h1>
+
+    <p class="subtitle">
+        I have something special for you... 💐
+    </p>
+
+    <p style="color:#ffc5dc;margin-bottom:25px;">
+        Tap any bouquet to begin ✨
+    </p>
+
+    <div class="bouquets">
+
+        <div class="bouquet" onclick="openPage(2)">
+            <div class="flowers">🌹🌷</div>
+            <div class="wrap"></div>
+            <div class="ribbon"></div>
+            <div class="bouquetLabel">For You ❤️</div>
+        </div>
+
+        <div class="bouquet" onclick="openPage(2)">
+            <div class="flowers">🌸🌹</div>
+            <div class="wrap"></div>
+            <div class="ribbon"></div>
+            <div class="bouquetLabel">My Love 💕</div>
+        </div>
+
+        <div class="bouquet" onclick="openPage(2)">
+            <div class="flowers">🌷🌺</div>
+            <div class="wrap"></div>
+            <div class="ribbon"></div>
+            <div class="bouquetLabel">Beautiful You ✨</div>
+        </div>
+
+        <div class="bouquet" onclick="openPage(2)">
+            <div class="flowers">🌹🌸</div>
+            <div class="wrap"></div>
+            <div class="ribbon"></div>
+            <div class="bouquetLabel">Always Mine 💖</div>
+        </div>
+
+        <div class="bouquet" onclick="openPage(2)">
+            <div class="flowers">🌺🌷</div>
+            <div class="wrap"></div>
+            <div class="ribbon"></div>
+            <div class="bouquetLabel">With Love 💗</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 2 : SHAYARI + SCROLL + YES
+===================================================== -->
+
+<section class="page" id="page2">
+
+    <div class="stars"></div>
+
+    <div class="shayariContainer">
+
+        <h2>
+            Just For You, My Love 🌙
+        </h2>
+
+        <div class="shayari">
+
+            "Tum meri zindagi ka woh khoobsurat ehsaas ho,<br>
+            jise lafzon mein bayan karna mushkil hai... ❤️<br><br>
+
+            Tumhari ek smile meri poori duniya ko roshan kar deti hai,<br>
+            tumhari ek baat mere dil ko sukoon de deti hai... 💕<br><br>
+
+            Tum paas ho ya mujhse door,<br>
+            mere dil ke sabse kareeb tum hi rehti ho...<br><br>
+
+            Meri har dua mein tum,<br>
+            meri har khushi mein tum,<br>
+            aur meri har beautiful memory mein tum... ❤️<br><br>
+
+            Agar mujhe zindagi dobara jeene ka mauka mile,<br>
+            toh har baar main tumhe hi choose karunga."
+
+        </div>
+
+        <div class="scrollHint">
+            ↓ Keep scrolling, there's something waiting for you ↓
+        </div>
+
+
+        <!-- YES SECTION -->
+
+        <div class="yesBox">
+
+            <h3>
+                Will you continue this little surprise? 🥺❤️
+            </h3>
+
+            <p style="color:#ffc9dc;margin-bottom:25px;">
+                There's something waiting just for you...
+            </p>
+
+            <button class="yesButton" onclick="openPage(3)">
+                YES ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 3 : CAKE
+===================================================== -->
+
+<section class="page" id="page3">
+
+    <div class="stars"></div>
+
+    <h1 class="cakeTitle">
+        A Special Cake For A Special Girl 🎂❤️
+    </h1>
+
+    <div class="cake" onclick="openPage(4)">
+
+        <div class="cakeBase"></div>
+
+        <div class="cakeCream"></div>
+
+        <div class="cakeTop">
+
+            <div class="drip"></div>
+            <div class="drip"></div>
+            <div class="drip"></div>
+            <div class="drip"></div>
+
+        </div>
+
+        <div class="candle">
+
+            <div class="flame"></div>
+
+        </div>
+
+    </div>
+
+    <p class="tapCake">
+        🎂 Tap the cake... make a wish ✨
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 4 : I LOVE YOU
+===================================================== -->
+
+<section class="page" id="page4">
+
+    <div class="stars"></div>
+
+    <div class="bigLove">
+        I LOVE YOU
+    </div>
+
+    <div class="bigHeart">
+        ❤️
+    </div>
+
+    <p style="font-size:20px;color:#ffd0e1;margin-top:15px;">
+        More than words can ever explain...
+    </p>
+
+    <button class="nextBtn" onclick="openPage(5)">
+        One Last Surprise 💌
+    </button>
+
+</section>
+
+
+<!-- =====================================================
+     PAGE 5 : FULL BIRTHDAY LOVE LETTER
+===================================================== -->
+
+<section class="page" id="page5">
+
+    <div class="letter">
+
+        <h1 class="letterTitle">
+            HAPPY BIRTHDAY<br>
+            MINE ❤️
+        </h1>
+
+        <div class="letterSubtitle">
+            To The Most Special Person In My World ✨
+        </div>
+
+
+        <p>
+            My Love,
+        </p>
+
+
+        <p>
+            Today is not just another day. Today is the day when
+            someone incredibly beautiful came into this world —
+            <span class="highlight">YOU.</span> ❤️
+        </p>
+
+
+        <p>
+            And honestly, I don't think words will ever be enough
+            to explain how special you are to me.
+            You are one of those rare people whose presence alone
+            can make everything feel a little more beautiful.
+        </p>
+
+
+        <p>
+            Your smile has a different kind of magic.
+            Your voice has a comfort that I can't explain.
+            And somehow, just knowing that you exist makes my world
+            feel a little warmer and happier.
+        </p>
+
+
+        <p>
+            On your birthday, I don't just want to wish you
+            happiness for today. I want every single day of your
+            life to be filled with beautiful moments, genuine smiles,
+            peaceful nights, amazing memories and all the love
+            your heart deserves. 🎂✨
+        </p>
+
+
+        <p>
+            I hope every dream you have slowly turns into reality.
+            I hope you achieve everything you have ever wished for.
+            I hope you always believe in yourself and never forget
+            just how precious you are.
+        </p>
+
+
+        <p>
+            And whenever life becomes difficult,
+            whenever you feel tired or lost,
+            I hope you remember that you are loved,
+            you are important,
+            and you are someone's favourite person in this entire world. ❤️
+        </p>
+
+
+        <p>
+            If I could give you one thing today,
+            I would give you the ability to see yourself through my eyes.
+            Then you would finally understand how beautiful,
+            precious and irreplaceable you really are.
+        </p>
+
+
+        <p>
+            Thank you for being you.
+            Thank you for your smile.
+            Thank you for every little moment.
+            And most importantly,
+            <span class="highlight">
+                thank you for existing.
+            </span>
+        </p>
+
+
+        <p>
+            I hope this birthday becomes the beginning of the most
+            beautiful chapter of your life.
+            May this year bring you more happiness than you can count,
+            more memories than you can remember,
+            and more love than your heart can hold. 💕
+        </p>
+
+
+        <p>
+            <b>
+                Happy Birthday, my beautiful girl. ❤️
+                You deserve the entire universe and everything beautiful
+                inside it.
+            </b>
+        </p>
+
+
+        <div class="signature">
+            Forever yours,<br>
+            The one who loves you endlessly ❤️
+        </div>
+
+
+        <div class="finalLove">
+            I LOVE YOU ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =====================================================
+   PAGE NAVIGATION
+===================================================== */
+
+function openPage(number){
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    const nextPage=document.getElementById("page"+number);
+
+    nextPage.classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    createHearts();
+}
+
+
+/* =====================================================
+   CREATE STARS
+===================================================== */
+
+document.querySelectorAll(".stars").forEach(container=>{
+
+    for(let i=0;i<70;i++){
+
+        const star=document.createElement("span");
+
+        star.className="star";
+
+        star.style.left=Math.random()*100+"%";
+        star.style.top=Math.random()*100+"%";
+
+        star.style.animationDelay=
+            Math.random()*2+"s";
+
+        container.appendChild(star);
+    }
+
+});
+
+
+/* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+function createHearts(){
+
+    const heartList=[
+        "❤️",
+        "💕",
+        "💖",
+        "💗",
+        "💓",
+        "💘",
+        "💝"
+    ];
+
+    for(let i=0;i<10;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="floatingHeart";
+
+        heart.innerHTML=
+            heartList[
+                Math.floor(
+                    Math.random()*heartList.length
+                )
+            ];
+
+        heart.style.left=
+            Math.random()*100+"vw";
+
+        heart.style.fontSize=
+            (15+Math.random()*30)+"px";
+
+        heart.style.animationDuration=
+            (3+Math.random()*4)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },7000);
+    }
+
+}
+
+
+/* =====================================================
+   CONTINUOUS HEARTS ON FINAL PAGE
+===================================================== */
+
+setInterval(()=>{
+
+    if(
+        document
+        .getElementById("page5")
+        .classList
+        .contains("active")
+    ){
+
+        createHearts();
+
+    }
+
+},2500);
+
+</script>
+
+</body>
+</html>
+```
